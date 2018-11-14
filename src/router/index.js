@@ -7,8 +7,23 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: resolve => require(['@/components/HelloWorld'], resolve)
+      redirect: resolve => require(['@/components/recommend/recommend'], resolve)
+    },
+    {
+      path: '/recommend',
+      component: resolve => require(['@/components/recommend/recommend'], resolve)
+    },
+    {
+      path: '/singer',
+      component: resolve => require(['@/components/singer/singer'], resolve)
+    },
+    {
+      path: '/rank',
+      component: resolve => require(['@/components/rank/rank'], resolve)
+    },
+    {
+      path: '/search',
+      component: resolve => require(['@/components/search/search'], resolve)
     }
   ]
 })

@@ -14,6 +14,7 @@ export default {
 <style scoped lang="less">
 @import '../../common/less/variable.less';
 @import '../../common/less/mixin.less';
+@import '../../common/less/mixin.less';
 .m-header{
   .color_bg;
   .pos(r);
@@ -29,6 +30,7 @@ export default {
     width:30px;
     height:32px;
     margin-right:9px;
+    .bg_image(@url:'logo.png');
     background-size:30px 32px;
   }
   .text{
