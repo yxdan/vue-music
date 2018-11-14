@@ -13,6 +13,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
+    "better-scroll": "^1.13.2",
     "common": "^0.2.5",
     "css": "^2.2.4",
     "fastclick": "^1.0.6",
