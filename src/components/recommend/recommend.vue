@@ -1,13 +1,15 @@
 <template>
   <div class="recommend">
-    <div v-if="recommends.length" class="slider_wrapper">
-      <slider>
-        <div v-for="item of recommends" :key="item.index"  ref="sliderWrapper">
-          <a :href="item.linkUrl">
-            <img :src="item.picUrl">
-          </a>
-        </div>
-      </slider>
+    <div class="recommend_content">
+      <div class="slider_wrapper"  v-if="recommends.length">
+        <slider>
+          <div v-for="item in recommends" :key="item.id">
+            <a :href="item.linkUrl">
+              <img :src="item.picUrl">
+            </a>
+          </div>
+        </slider>
+      </div>
     </div>
   </div>
 </template>
@@ -48,16 +50,16 @@ export default {
   width:100%;
   top:88px;
   bottom:0;
-  .recommend_comment{
+  .recommend_content{
     height:100%;
     overflow: hidden;
-  }
-  .slider_wrapper{
-    position:relative;
-    width:100%;
-    overflow: hidden;
-    img{
+    .slider_wrapper{
+      position:relative;
       width:100%;
+      overflow: hidden;
+      img{
+        width:100%;
+      }
     }
   }
 }
