@@ -5,25 +5,32 @@
   "author": "yaoxiaodan <yaoxiaodan@dzqk.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js ",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "test": "webpack-dev-server --inline --progress --config build/dev-server.js "
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "better-scroll": "^0.1.15",
     "common": "^0.2.5",
+    "connect-history-api-fallback": "^1.5.0",
     "css": "^2.2.4",
+    "express": "^4.16.4",
     "fastclick": "^1.0.6",
+    "http-proxy-middleware": "^0.19.0",
     "jsonp": "^0.2.1",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "style": "0.0.3",
     "style-loader": "^0.23.1",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-hot-middleware": "^2.24.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
