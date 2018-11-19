@@ -3,9 +3,7 @@
     <!--<router-view/>-->
     <m-header></m-header>
     <tab></tab>
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
+    <router-view></router-view>
   </div>
 </template>
 
