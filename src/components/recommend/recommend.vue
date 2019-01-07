@@ -10,13 +10,16 @@
           </div>
         </slider>
       </div>
+      <div>
+        推荐歌单
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Slider from 'base/slider/slider'
-import {getRecommend} from 'api/recommend'
+import {getRecommend, getDiscList} from 'api/recommend'
 import {ERR_OK} from 'api/config'
 export default {
   name: 'recommend',
@@ -30,12 +33,20 @@ export default {
   },
   created () {
     this._getRecommend()
+    this._getDiscList()
   },
   methods: {
     _getRecommend () {
       getRecommend().then((res) => {
         if (res.code === ERR_OK) {
           this.recommends = res.data.slider
+        }
+      })
+    },
+    _getDiscList () {
+      getDiscList().then((res) => {
+        if (res.code === ERR_OK) {
+          console.log(49, res.data.list)
         }
       })
     }

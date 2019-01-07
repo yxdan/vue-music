@@ -1,6 +1,7 @@
 <template>
   <div>
     歌手页面
+    <my-payment></my-payment>
   </div>
 </template>
 
