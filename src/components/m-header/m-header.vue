@@ -14,7 +14,6 @@ export default {
 <style scoped lang="less">
 @import '../../common/less/variable.less';
 @import '../../common/less/mixin.less';
-@import '../../common/less/mixin.less';
 .m-header{
   .color_bg;
   .pos(r);

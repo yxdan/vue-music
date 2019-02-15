@@ -10,8 +10,19 @@
           </div>
         </slider>
       </div>
-      <div>
-        推荐歌单
+      <div class="disc_wrapper">
+        <h1>热门歌单推荐</h1>
+        <ul>
+          <li class="item" v-for="item of discList" :key="item.dissid">
+            <div class="icon">
+              <img width="60" height="60" :src="item.imgurl" alt="">
+            </div>
+            <div class="text">
+              <h2 class="name" v-html="item.creator.name"></h2>
+              <p class="desc" v-html="item.dissname"></p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -25,7 +36,8 @@ export default {
   name: 'recommend',
   data () {
     return {
-      recommends: []
+      recommends: [],
+      discList: []
     }
   },
   components: {
@@ -46,7 +58,7 @@ export default {
     _getDiscList () {
       getDiscList().then((res) => {
         if (res.code === ERR_OK) {
-          console.log(49, res.data.list)
+          this.discList = res.data.list
         }
       })
     }
@@ -71,6 +83,43 @@ export default {
       img{
         width:100%;
       }
+    }
+    .disc_wrapper{
+      .color_bg;
+      h1{
+        line-height:65px;
+        text-align:center;
+        .font_size_medium;
+        .color_theme;
+      }
+      .item{
+        display:flex;
+        box-sizing: border-box;
+        align-content: center;
+        padding:0 20px 20px 20px;
+        .icon{
+          flex:0 0 60px;
+          width:60px;
+          padding-right:20px;
+        }
+        .text{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex: 1;
+          line-height: 20px;
+          overflow: hidden;
+          .font_size_medium;
+          .name{
+            margin-bottom:10px;
+            .color_text;
+          }
+          .desc{
+            .color_text_d;
+          }
+        }
+      }
+
     }
   }
 }
