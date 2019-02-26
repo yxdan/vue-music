@@ -29,7 +29,7 @@ export default {
     width:30px;
     height:32px;
     margin-right:9px;
-    .bg_image(@url:'logo.png');
+    .bg_image(@url:'../../common/images/logo.png');
     background-size:30px 32px;
   }
   .text{
